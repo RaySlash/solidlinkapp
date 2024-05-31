@@ -1,0 +1,20 @@
+{
+  "name": "api",
+  "version": "1.0.50",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "db": "bunx prisma migrate dev --name init",
+    "seed": "bun ts-node ./prisma/seed.js"
+  },
+  "dependencies": {
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "@types/node": "^20.12.13",
+    "prisma": "^5.14.0",
+    "ts-node": "^10.9.2"
+  },
+  "module": "src/index.js"
+}
