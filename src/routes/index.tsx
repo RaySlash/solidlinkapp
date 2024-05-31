@@ -1,17 +1,24 @@
 import { FaSolidPlus } from "solid-icons/fa";
 import Post from "../components/Post";
+import { For } from "solid-js";
+import { post } from "../../tmp/seed";
 
 export default function Home() {
   return (
     <div class="flex-col max-w-full mt-10">
       <HomeBar />
-      <div class="mt-5 flex-1 justify-center items-center">
-        <Post
-          title="Deadly"
-          desc="Kakeguri"
-          date={Date().substring(0, 15)}
-          username="Shane"
-        />
+      <div class="mt-5 flex-col justify-center items-center">
+        <For each={post}>
+          {(p) => (
+            <Post
+              title={p.title}
+              desc={p.desc}
+              date={p.date}
+              username={p.username}
+              image={p.image}
+            />
+          )}
+        </For>
       </div>
     </div>
   );

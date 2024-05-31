@@ -9,11 +9,13 @@ export default function App() {
   return (
     <Router
       root={(props) => (
-        <div class="m-auto px-10 mt-10 max-w-3xl">
+        <>
           <Navbar />
-          <Suspense>{props.children}</Suspense>
+          <div class="m-auto px-10 mt-10 max-w-3xl">
+            <Suspense>{props.children}</Suspense>
+          </div>
           <Footer />
-        </div>
+        </>
       )}
     >
       <FileRoutes />
