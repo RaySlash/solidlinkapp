@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vinxi dev",
     "build": "vinxi build",
-    "start": "vinxi start"
+    "start": "vinxi start",
+    "db": "bunx prisma migrate dev --name init",
+    "seed": "bun ts-node ./prisma/seed.js"
   },
   "dependencies": {
     "@solidjs/router": "^0.13.3",
@@ -18,5 +20,10 @@
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.13",
+    "prisma": "^5.14.0",
+    "ts-node": "^10.9.2"
   }
 }

@@ -24,9 +24,6 @@ a {
   text-decoration: none;
   text-align: center;
 }
-a:hover {
-  color: #747bff;
-}
 
 body {
   margin: 0;
@@ -57,9 +54,6 @@ button:hover {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;

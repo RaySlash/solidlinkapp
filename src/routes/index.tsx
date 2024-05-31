@@ -1,7 +1,6 @@
 import { FaSolidPlus } from "solid-icons/fa";
 import Post from "../components/Post";
 import { For } from "solid-js";
-import { post } from "../../tmp/seed";
 
 export default function Home() {
   return (
