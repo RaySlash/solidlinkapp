@@ -3,13 +3,14 @@ import { createResource, For, Show, Switch, Match } from "solid-js";
 import Post from "../components/Post";
 
 const apiUrl = "http://localhost:3003/api";
+const fetchPosts = async () => {
+  const response = await fetch(apiUrl + "/posts");
+  return response.json();
+};
 
 export default function Home() {
-  const fetchPosts = async () => {
-    const response = await fetch(apiUrl + "/posts");
-    return response.json();
-  };
   const [posts] = createResource(fetchPosts);
+
   return (
     <div class="flex-col max-w-full">
       <HomeBar />

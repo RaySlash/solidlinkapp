@@ -11,7 +11,7 @@ export default function App() {
       root={(props) => (
         <>
           <Navbar />
-          <div class="m-auto px-10 mt-20 max-w-3xl">
+          <div class="m-auto px-10 mt-20 max-w-3xl min-h-full">
             <Suspense>{props.children}</Suspense>
           </div>
           <Footer />

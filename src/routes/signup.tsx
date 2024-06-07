@@ -1,11 +1,13 @@
-import { A } from "@solidjs/router";
-import { FaSolidChevronDown } from "solid-icons/fa";
-
-function Login() {
+function Signup() {
   return (
     <div id="formContainer">
-      <h1>Login</h1>
+      <h1>Signup</h1>
       <form>
+        <input
+          type="text"
+          placeholder="Full Name"
+          class="rounded-full text-center"
+        />
         <input
           class="rounded-full text-center"
           type="text"
@@ -20,17 +22,11 @@ function Login() {
           class="font-bold px-8 h-fit self-center text-black dark:text-white dark:bg-black dark:hover:bg-white dark:hover:text-black "
           type="submit"
         >
-          Login
+          Signup
         </button>
       </form>
-      <p class="flex justify-center items-center font-light text-xs">
-        Don't have an account?
-        <A href="/signup" class="text-purple-700">
-          Sign Up
-        </A>
-      </p>
     </div>
   );
 }
 
-export default Login;
+export default Signup;
