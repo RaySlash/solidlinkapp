@@ -1,23 +1,40 @@
 import { FaSolidPlus } from "solid-icons/fa";
+import { createResource, For, Show, Switch, Match } from "solid-js";
 import Post from "../components/Post";
-import { For } from "solid-js";
+
+const apiUrl = "http://localhost:3003/api";
 
 export default function Home() {
+  const fetchPosts = async () => {
+    const response = await fetch(apiUrl + "/posts");
+    return response.json();
+  };
+  const [posts] = createResource(fetchPosts);
   return (
-    <div class="flex-col max-w-full mt-10">
+    <div class="flex-col max-w-full">
       <HomeBar />
-      <div class="mt-5 flex-col justify-center items-center">
-        <For each={post}>
-          {(p) => (
-            <Post
-              title={p.title}
-              desc={p.desc}
-              date={p.date}
-              username={p.username}
-              image={p.image}
-            />
-          )}
-        </For>
+      <div class="flex-col justify-center items-center">
+        <Show when={posts.loading}>
+          <p>Loading...</p>
+        </Show>
+        <Switch>
+          <Match when={posts.error}>
+            <p>Error: {posts.error()}</p>
+          </Match>
+          <Match when={posts}>
+            <For each={posts()}>
+              {(p) => (
+                <Post
+                  title={p.title}
+                  desc={p.description}
+                  date={p.createdAt}
+                  username={p.author.name}
+                  image={p.image}
+                />
+              )}
+            </For>
+          </Match>
+        </Switch>
       </div>
     </div>
   );

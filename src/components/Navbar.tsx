@@ -9,18 +9,21 @@ function Navbar() {
       </A>
       <ul class="list-none md:flex gap-x-8 items-center justify-center hidden md:visible">
         <li>
-          <A href="/">HOME</A>
+          <A href="/profile" activeClass="font-bold bg-black">
+            PROFILE
+          </A>
         </li>
         <li>
-          <A href="/profile">PROFILE</A>
-        </li>
-        <li>
-          <A href="/settings">SETTINGS</A>
+          <A href="/settings" activeClass="font-bold bg-black">
+            SETTINGS
+          </A>
         </li>
       </ul>
-      <button class="font-bold px-8 h-fit self-center text-black dark:text-white dark:bg-black dark:hover:bg-white dark:hover:text-black ">
-        Login
-      </button>
+      <A href="/login" activeClass="hidden" inactiveClass="visible">
+        <button class="font-bold px-8 h-fit self-center text-black dark:text-white dark:bg-black dark:hover:bg-white dark:hover:text-black ">
+          Login
+        </button>
+      </A>
     </div>
   );
 }

@@ -1,4 +1,9 @@
-import { FaSolidAngleDown, FaSolidUser } from "solid-icons/fa";
+import {
+  FaSolidComments,
+  FaSolidAngleDown,
+  FaSolidUser,
+  FaSolidThumbsUp,
+} from "solid-icons/fa";
 
 function Post(props: {
   username: string;
@@ -19,11 +24,17 @@ function Post(props: {
       <div class=" flex items-center justify-center self-center bg-gray-100 rounded-xl p-3">
         <img src={props.image} alt="anime" class="h-96 rounded-xl" />
       </div>
-      <div class="flex-col items-center">
-        <h1>{props.title}</h1>
-        <p class="text-sm">{props.date}</p>
+      <div class="flex justify-between items-center w-full p-2 rounded-xl">
+        <div class="flex gap-2">
+          <FaSolidThumbsUp class="text-black text-lg" />
+          <FaSolidComments class="text-black text-lg" />
+        </div>
+        <p class="text-sm">{props.date.substring(0, 10)}</p>
       </div>
-      <p class="mt-6">{props.desc}</p>
+      <div class="flex-col items-center">
+        <p class="text-xl font-bold">{props.title}</p>
+      </div>
+      <p class="mt-2">{props.desc}</p>
     </div>
   );
 }
